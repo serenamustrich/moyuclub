@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Bomberman</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Bomberman.json", {
+        onProgress: function (instance, progress) {
+          document.getElementById('progress').value = progress * 100;
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="gameContainer"></div>
+    <div class="progress-container">
+      <progress id="progress" value="0" max="100"></progress>
+    </div>
+  </body>
+</html>
